@@ -122,18 +122,22 @@ $ bun --watch run src/main.ts
 
 Seems to work, at least starting the server, however the route being called won't work and raise some error. I tried to return something very simple (a string) see `/src/app.controller.ts` and it did work. The error was raised, because it seems running src/main.ts does not seems to attach class's service properly as you can see `appService` is `undefined` when exposing this.
 
-<pre><span style="color:#2AA1B3"><b>nestjs-bun-test</b></span> on <span style="color:#A347BA"><b> main</b></span> <span style="color:#C01C28"><b>[?]</b></span> via <span style="color:#C01C28"><b>🍞 v0.6.7 </b></span>via <span style="color:#26A269"><b> v20.2.0 </b></span>
-<span style="color:#C01C28"><b>❯</b></span> bun run src/main.ts
-<span style="color:#26A269">[Nest] 140824  - </span>06/03/2023, 2:58:47 PM <span style="color:#26A269">    LOG</span> <span style="color:#A2734C">[NestFactory] </span><span style="color:#26A269">Starting Nest application...</span>
-<span style="color:#26A269">[Nest] 140824  - </span>06/03/2023, 2:58:47 PM <span style="color:#26A269">    LOG</span> <span style="color:#A2734C">[InstanceLoader] </span><span style="color:#26A269">AppModule dependencies initialized</span><span style="color:#A2734C"> +9ms</span>
-<span style="color:#26A269">[Nest] 140824  - </span>06/03/2023, 2:58:47 PM <span style="color:#26A269">    LOG</span> <span style="color:#A2734C">[RoutesResolver] </span><span style="color:#26A269">AppController {/}:</span><span style="color:#A2734C"> +5ms</span>
-<span style="color:#26A269">[Nest] 140824  - </span>06/03/2023, 2:58:47 PM <span style="color:#26A269">    LOG</span> <span style="color:#A2734C">[RouterExplorer] </span><span style="color:#26A269">Mapped {/, GET} route</span><span style="color:#A2734C"> +2ms</span>
-<span style="color:#26A269">[Nest] 140824  - </span>06/03/2023, 2:58:47 PM <span style="color:#26A269">    LOG</span> <span style="color:#A2734C">[NestApplication] </span><span style="color:#26A269">Nest application successfully started</span><span style="color:#A2734C"> +1ms</span>
+<pre><span style="color:#2AA1B3"><b>nestjs-bun-test</b></span> on <span style="color:#A347BA"><b> main</b></span> <span style="color:#C01C28"><b>[!?]</b></span> via <span style="color:#C01C28"><b>🍞 v0.6.7 </b></span>via <span style="color:#26A269"><b> v20.2.0 </b></span>
+<span style="color:#C01C28"><b>❯</b></span> bun run src/main.ts        
+<span style="color:#AAAAAA">[</span><span style="color:#AAAAAA"><b>0.02ms</b></span><span style="color:#AAAAAA">] &quot;.env&quot;</span>
+<span style="color:#26A269">[Nest] 145087  - </span>06/03/2023, 3:14:56 PM <span style="color:#26A269">    LOG</span> <span style="color:#A2734C">[NestFactory] </span><span style="color:#26A269">Starting Nest application...</span>
+<span style="color:#26A269">[Nest] 145087  - </span>06/03/2023, 3:14:56 PM <span style="color:#26A269">    LOG</span> <span style="color:#A2734C">[InstanceLoader] </span><span style="color:#26A269">AppModule dependencies initialized</span><span style="color:#A2734C"> +10ms</span>
+<span style="color:#26A269">[Nest] 145087  - </span>06/03/2023, 3:14:56 PM <span style="color:#26A269">    LOG</span> <span style="color:#A2734C">[RoutesResolver] </span><span style="color:#26A269">AppController {/}:</span><span style="color:#A2734C"> +5ms</span>
+<span style="color:#26A269">[Nest] 145087  - </span>06/03/2023, 3:14:56 PM <span style="color:#26A269">    LOG</span> <span style="color:#A2734C">[RouterExplorer] </span><span style="color:#26A269">Mapped {/, GET} route</span><span style="color:#A2734C"> +2ms</span>
+<span style="color:#26A269">[Nest] 145087  - </span>06/03/2023, 3:14:56 PM <span style="color:#26A269">    LOG</span> <span style="color:#A2734C">[NestApplication] </span><span style="color:#26A269">Nest application successfully started</span><span style="color:#A2734C"> +1ms</span>
 {
   returning: <span style="color:#26A269">&quot;hello world&quot;</span><span style="color:#AAAAAA">,</span>
   thisValue: {
     appService: undefined,
     getHello: <span style="color:#2AA1B3">[Function:</span> <span style="color:#2AA1B3">getHello]</span>
   }
+}
+{
+  ENV_LOADED: <span style="color:#26A269">&quot;true&quot;</span>
 }
 </pre>
